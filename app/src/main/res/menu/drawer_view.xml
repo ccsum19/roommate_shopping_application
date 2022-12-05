@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_list"
+            android:icon="?attr/actionModePasteDrawable"
+            android:title="Shopping List" />
+
+        <item
+            android:id="@+id/nav_list_pending"
+            android:icon="?android:attr/actionModeFindDrawable"
+            android:title="Shopping Basket" />
+        <item
+            android:id="@+id/nav_list_completed"
+            android:icon="@drawable/complete_icon"
+            android:title="Purchased items list" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="Settings" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout_icon"
+            android:title="Logout" />
+    </group>
+</menu>
