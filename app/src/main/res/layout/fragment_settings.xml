@@ -5,31 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/settingsEditFirstName"
-        android:layout_width="155dp"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="18dp"
-        android:ems="10"
-        android:hint="First Name"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <EditText
-        android:id="@+id/settingsEditLastName"
-        android:layout_width="155dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:ems="10"
-        android:hint="Last Name"
-        android:inputType="textPersonName"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/settingsEditFirstName"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="First Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/settingsEditLastName"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Last Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView3"
@@ -38,6 +42,7 @@
         android:layout_marginTop="32dp"
         android:text="Change Name"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,26 +51,28 @@
     <Button
         android:id="@+id/changeNameButton"
         android:layout_width="172dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/splashBackground"
+        android:layout_height="48dp"
+        android:backgroundTint="#009688"
         android:text="Change name!"
         android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/leaveRoomButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsEditFirstName" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
     <Button
         android:id="@+id/leaveRoomButton"
         android:layout_width="223dp"
-        android:layout_height="41dp"
-        android:layout_marginBottom="25dp"
-        android:background="@color/SignUpButtonColor"
+        android:layout_height="48dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#6C747A"
         android:text="Leave room"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/changeNameButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,46 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/defaultBG"
+    android:background="#FFFFFF"
     tools:context=".NewShoppingListActivity">
 
     <TextView
         android:id="@+id/newListActivityHeaderTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginBottom="32dp"
         android:text="Add New List"
         android:textColor="@android:color/black"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/listnameEditText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <EditText
         android:id="@+id/listnameEditText"
         android:layout_width="275dp"
         android:layout_height="42dp"
-        android:layout_marginTop="39dp"
         android:ems="10"
         android:hint="List Name"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/createButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newListActivityHeaderTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/newListActivityHeaderTextView"
+        app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/createButton"
         android:layout_width="169dp"
         android:layout_height="51dp"
-        android:layout_marginBottom="316dp"
-        android:background="@color/LogInButtonColor"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#009688"
         android:text="CREATE"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listnameEditText"
+        app:layout_constraintVertical_bias="0.5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

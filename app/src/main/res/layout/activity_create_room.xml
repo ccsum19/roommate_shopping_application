@@ -10,38 +10,46 @@
         android:id="@+id/createRoomActivityHeaderTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginBottom="32dp"
         android:text="Create Room"
         android:textColor="@android:color/black"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/roomNameEditText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <EditText
         android:id="@+id/roomNameEditText"
         android:layout_width="275dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="84dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:hint="Room Name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/confirmCreateRoomButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createRoomActivityHeaderTextView"
+        app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/confirmCreateRoomButton"
         android:layout_width="169dp"
         android:layout_height="51dp"
-        android:layout_marginBottom="316dp"
-        android:background="@color/SignUpButtonColor"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#009688"
         android:text="Create!"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roomNameEditText"
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

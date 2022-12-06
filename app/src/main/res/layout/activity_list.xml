@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:background="?attr/colorPrimary"
+        android:background="@color/teal_700"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -50,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
             android:layout_weight="1"
+            android:backgroundTint="#009688"
             android:text="ADD" />
     </LinearLayout>
 
@@ -57,6 +58,7 @@
         android:id="@+id/itemList"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="5dp"
         app:layout_constraintBottom_toTopOf="@id/purchasebtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="34dp"
         android:layout_weight="1"
+        android:backgroundTint="#009688"
         android:text="Go Shopping Basket"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
