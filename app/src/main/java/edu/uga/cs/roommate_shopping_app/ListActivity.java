@@ -39,7 +39,7 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        rView = findViewById(R.id.listItems);
+        rView = findViewById(R.id.itemList);
         rView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         database = FirebaseDatabase.getInstance();
         listID = getIntent().getExtras().getString("listID");

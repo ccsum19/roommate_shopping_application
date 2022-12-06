@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout = this.findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             DAO dao = DAO.getInstance();
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference userRef = database.getReference("/users/" + dao.getUserLookupEmail() + "/houseID");
@@ -48,10 +50,9 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String houseKey = dataSnapshot.getValue(String.class);
-                    if (houseKey == null){
+                    if (houseKey == null) {
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RoomlessFragment()).commit();
-                    }
-                    else{
+                    } else {
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RoomFragment()).commit();
                     }
                 }
@@ -85,10 +86,9 @@ public class MainActivity extends AppCompatActivity {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                         String houseKey = dataSnapshot.getValue(String.class);
-                                        if (houseKey == null){
+                                        if (houseKey == null) {
                                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RoomlessFragment()).commit();
-                                        }
-                                        else{
+                                        } else {
                                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RoomFragment()).commit();
                                         }
                                     }
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()) {
+                if (dataSnapshot.exists()) {
                     User user = dataSnapshot.getValue(User.class);
                     TextView firstLastTextView = header.findViewById(R.id.nav_profile_name);
                     String firstName = user.getFirstname() != null ? user.getFirstname() : "";
@@ -151,11 +151,12 @@ public class MainActivity extends AppCompatActivity {
                     houseIDTextView.setText(houseIDString);
                     String houseName = user.getHouseName() != null ? user.getHouseName() : "Split List";
                     actionbar.setTitle(houseName);
-                }
-                else Log.d(TAG,"null");
+                } else Log.d(TAG, "null");
             }
+
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) { }
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
         });
 
     }
@@ -175,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(final Menu menu){
+    public boolean onCreateOptionsMenu(final Menu menu) {
         DAO dao = DAO.getInstance();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference userRef = database.getReference("/users/" + dao.getUserLookupEmail());
@@ -188,8 +189,7 @@ public class MainActivity extends AppCompatActivity {
                         MenuItem plus_item = menu.findItem(R.id.action_add);
                         plus_item.setVisible(false);
                     }
-                }
-                else Log.d(TAG, "null");
+                } else Log.d(TAG, "null");
             }
 
             @Override
@@ -202,3 +202,4 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 }
+
